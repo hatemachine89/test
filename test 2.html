@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500;1,600&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+
+    
+<style>
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+   background-color: #13002A;
+;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.button {
+	position: relative;
+	z-index: 0;
+	width: 260px;
+	height: 86px;
+	border-radius: 60px;
+    overflow:hidden;
+	display: flex;
+    filter: grayscale(100%);
+
+    align-items:center;
+    justify-content:space-between;
+    font-family: 'Montserrat' , sans-serif;
+    font-size:22px;
+    font-weight:600;
+    padding:30px;
+    color:#fff;
+
+}
+.button img{
+    height:40px;
+    width:40px;
+}
+
+.button::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -65%;
+		top: -211%;
+		width: 380px;
+	    height: 380px;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-image: linear-gradient(#fff  , transparent);
+        
+		
+	}
+
+.button::after {
+        opacity:1;
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 2px;
+		top: 2px;
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
+		border-radius: 60px;
+        background: #6539F6;
+
+	}
+    .button:hover {
+    box-shadow:0px 0px 200px 100px rgba(196, 196, 196, 0.1),
+    0px 0px 3px 4px rgba(123, 136, 255, 0.17);
+    width:266px;
+    height:86px;
+    filter: grayscale(0%);
+    transition:0.4s ease-in;
+		
+
+	}
+    .button:hover:after{
+        box-shadow:inset 0px -46px 15px -36px rgba(212, 143, 236, 0.57);
+    }
+    .button:hover:before{
+        animation: rotate 4s linear;
+    }
+
+    .static-gif{
+    width:40px;
+    height:40px;
+    position:absolute;
+    background-color: #6539F6;
+}
+
+
+</style>
+</head>
+<body>
+
+
+    <div class="button">
+        <img class="static-gif" src="giphy 1.png" height>
+        <iframe class="live-gif"src="https://giphy.com/embed/l8STJc1dIhuzXEJGKe?" width="40px" height="40px" frameBorder="0" allowFullScreen
+   ></iframe>
+    Generate Site
+      </div>
+
+
+
+<script>
+
+document.querySelector('.button').addEventListener("mouseover", mouseOver);
+document.querySelector('.button').addEventListener("mouseout", mouseOut);
+
+
+function mouseOver(){
+    document.querySelector('.static-gif').style.opacity = "0";
+   
+
+    // document.querySelector('.btn-wrapper').style.width = "272px";
+    // document.querySelector('.btn-wrapper').style.height = "92px";
+
+
+}
+function mouseOut(){
+    document.querySelector('.static-gif').style.opacity = "1";
+
+    
+    // document.querySelector('.btn-wrapper').style.width = "266px";
+    // document.querySelector('.btn-wrapper').style.height = "86px";
+
+}
+
+
+
+
+</script>
+    
+</body>
+</html>
